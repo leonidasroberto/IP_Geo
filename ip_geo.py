@@ -1,5 +1,6 @@
 import requests
-import os
+#ATIVE CASO UTILIZE WINDOWS
+#import os
 import json
 import clipboard
 
@@ -7,9 +8,7 @@ trum=clipboard.paste()
 
 req=requests.get('http://ipinfo.io/{}'. format(trum))
 
-
 trat=json.loads(req.text)
-
 
 print("")
 ip=trat['ip']
