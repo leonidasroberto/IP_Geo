@@ -24,5 +24,5 @@ print("Cidade: ",city)
 print("País: ",pais)
 print("Geo Localização: ",loc)
 print("")
+#ATIVE CASO UTILIZE WINDOWS
 #os.system("pause")
-print(req.text)
