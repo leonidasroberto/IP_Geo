@@ -18,7 +18,7 @@ city=trat['city']
 pais=trat['country']
 loc=trat['loc']
 
-print("O ip é: ",ip)
+print("O ip é:",ip)
 print("Hostname:",host)
 print("Cidade: ",city)
 print("País: ",pais)
