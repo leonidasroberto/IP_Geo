@@ -4,29 +4,26 @@ import requests
 import json
 import clipboard
 
-trum=clipboard.paste()
-dart=(trum[3:4])
+ip=clipboard.paste()
 
-if dart != ".":
-  print("Você não copiou um número IP válido!")
+# if dart != ".":
+#   print("Você não copiou um número IP válido!")
+res=requests.get('http://ipinfo.io/{}'. format(ip))
 
-else:
-  req=requests.get('http://ipinfo.io/{}'. format(trum))
+resJson=json.loads(res.text)
+# print(resJson)
+print("")
+ip=resJson['ip']
+host=resJson['org']
+city=resJson['city']
+pais=resJson['country']
+loc=resJson['loc']
 
-  trat=json.loads(req.text)
-
-  print("")
-  ip=trat['ip']
-  host=trat['hostname']
-  city=trat['city']
-  pais=trat['country']
-  loc=trat['loc']
-
-  print("O ip é:",ip)
-  print("Hostname:",host)
-  print("Cidade: ",city)
-  print("País: ",pais)
-  print("Geo Localização: ",loc)
-  print("")
-  #ATIVE CASO UTILIZE WINDOWS
-  #os.system("pause")
+print("O ip é:",ip)
+print("Org:",host)
+print("Cidade: ",city)
+print("País: ",pais)
+print("Geo Localização: ",loc)
+print("")
+#ATIVE CASO UTILIZE WINDOWS
+#os.system("pause")
